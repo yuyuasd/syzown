@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>研究生课题 - 个人学术网页</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .research-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            border: 1px solid #e1e4e8;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #4CAF50;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            border-left: 5px solid #2196F3;
+        }
+
+        .research-title {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .research-title h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .keywords {
+            margin: 20px 0;
+        }
+
+        .keyword-tag {
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            color: white;
+            padding: 6px 12px;
+            margin: 0 6px 8px 0;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .keyword-tag:nth-child(2n) {
+            background: linear-gradient(135deg, #f6d365, #fda085);
+        }
+
+        .keyword-tag:nth-child(3n) {
+            background: linear-gradient(135deg, #84fab0, #8fd3f4);
+        }
+
+        .keyword-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .research-details {
+            margin-top: 25px;
+        }
+
+        .research-details ol {
+            padding-left: 25px;
+        }
+
+        .research-details li {
+            margin: 12px 0;
+            line-height: 1.7;
+            color: #2c3e50;
+        }
+
+        @media (max-width: 768px) {
+            .research-card {
+                padding: 20px;
+                margin: 15px 0;
+            }
+
+            .keyword-tag {
+                padding: 4px 10px;
+                margin: 0 4px 6px 0;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <div class="container">
+        <div id="sidebar"></div>
+        <main>
+            <section>
+                <h2><i class="fas fa-graduation-cap"></i> 研究生课题</h2>
+                <div class="research-card">
+                    <div class="research-title">
+                        <h3>🛸 无人机在GPS拒止环境下的自主寻找无标志物安全降落区域</h3>
+                        <p style="color: #666; font-size: 0.9em;">📄 SCI论文：Unmanned Aerial Vehicle Landing on Rugged Terrain by On-Board LIDAR–Camera Positioning System</p>
+                    </div>
+
+                    <div class="keywords">
+                        <strong>🔍 关键词:</strong><br>
+                        <span class="keyword-tag">🚁 无人机</span>
+                        <span class="keyword-tag">📡 激光雷达</span>
+                        <span class="keyword-tag">🗺️ SLAM</span>
+                        <span class="keyword-tag">☁️ 点云</span>
+                        <span class="keyword-tag">🏔️ 三维地形</span>
+                        <span class="keyword-tag">🧠 神经网络</span>
+                        <span class="keyword-tag">👁️ 图像识别</span>
+                        <span class="keyword-tag">🛣️ 路径规划</span>
+                        <span class="keyword-tag">🎯 群智能算法</span>
+                    </div>
+
+                    <div class="research-details">
+                        <strong>📝 研究内容:</strong>
+                        <ol>
+                            <li>🛰️ 无人机使用激光以及图像里程计在无GPS的环境下进行定位。</li>
+                            <li>📊 无人机在场景中按照规定扫描轨迹对场景进行点云地图建立。</li>
+                            <li>📈 利用代价函数对无人机该场景进行局部地形安全性计算。</li>
+                            <li>🤖 图分类神经网络改进，修改并添加注意力机制，优化识别精度，以适应机载电脑算力。</li>
+                            <li>🔍 对整体地图图像进行局部分割并使用网络进行识别，融合代价函数判断安全降落区域。</li>
+                            <li>⚡ 结合无人机电量代价函数进行降落至安全区域轨迹方式选择。</li>
+                            <li>🎯 在低电量模式下，采用群智能算法，对无人机安全轨迹进行约束，迭代出满足约束需求的较优路径。</li>
+                            <li>📉 利用贝塞尔样条曲线去无人机轨迹进行重优化。</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="node_modules/canvas-confetti/dist/confetti.browser.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header', 'components/header.html');
+            await loadComponent('sidebar', 'components/sidebar.html');
+            initConfetti();
+        });
+    </script>
+</body>
+</html>

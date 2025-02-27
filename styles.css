@@ -1,0 +1,651 @@
+/* 更新颜色变量 */
+:root {
+    --morandi-pink: #E8C6C6;
+    --morandi-blue: #C6D5E8;
+    --morandi-green: #C8D6CF;
+    --morandi-yellow: #E8E6C6;
+    --morandi-purple: #D6C6E8;
+    --morandi-gray: #D1D1D1;
+    --morandi-beige: #E8D8C6;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 0px;
+    line-height: 1.6;
+    min-height: 100vh;
+    background-color: var(--morandi-pink);
+    background-image: 
+        radial-gradient(closest-side, rgba(232, 198, 198, 1), rgba(232, 198, 198, 0)),
+        radial-gradient(closest-side, rgba(198, 213, 232, 1), rgba(198, 213, 232, 0)),
+        radial-gradient(closest-side, rgba(200, 214, 207, 1), rgba(200, 214, 207, 0)),
+        radial-gradient(closest-side, rgba(232, 230, 198, 1), rgba(232, 230, 198, 0)),
+        radial-gradient(closest-side, rgba(214, 198, 232, 1), rgba(214, 198, 232, 0));
+    background-size: 
+        130vmax 130vmax,
+        80vmax 80vmax,
+        90vmax 90vmax,
+        110vmax 110vmax,
+        90vmax 90vmax;
+    background-position:
+        -80vmax -80vmax,
+        60vmax -30vmax,
+        10vmax 10vmax,
+        -30vmax -10vmax,
+        50vmax 50vmax;
+    background-repeat: no-repeat;
+    animation: 15s movement linear infinite;
+    scroll-padding-top: 80px;  /* 添加这行，值应该比导航栏高度大一些 */
+}
+
+/* 修改导航栏样式 */
+header {
+    background: rgba(255, 255, 255, 0.2);  /* 降低背景色透明度 */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;  /* 减小导航栏的内边距 */
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);  /* 增加毛玻璃效果 */
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);  /* 调整阴影效果 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);  /* 添加细边框 */
+    left: 0;
+    z-index: 1;
+}
+
+/* 滚动时导航栏的样式（可选） */
+header.scrolled {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 导航菜单样式 */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    /* 初始状态：更强的毛玻璃效果 */
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a:hover {
+    color: white;
+    /* 悬停时才显示渐变色 */
+    background-image: linear-gradient(
+        90deg,
+        var(--morandi-pink) 0%,
+        var(--morandi-yellow) 15%,
+        var(--morandi-green) 30%,
+        var(--morandi-blue) 45%,
+        white 50%,
+        white 50%,
+        var(--morandi-pink) 55%,
+        var(--morandi-yellow) 70%,
+        var(--morandi-green) 85%,
+        var(--morandi-blue) 100%
+    );
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+    animation: pulse 0.5s;
+}
+
+nav ul li a:active {
+    transform: scale(0.95);
+}
+
+/* 修改容器样式 */
+.container {
+    display: flex;
+    margin-top: 60px;  /* 减小顶部边距，根据导航栏实际高度调整 */
+    padding: 20px;
+    gap: 20px;  /* 控制侧边栏和主内容之间的间距 */
+    backdrop-filter: blur(20px); /* 添加毛玻璃效果 */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    max-width: 1400px;  /* 限制最大宽度 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 修改侧边栏样式 */
+.sidebar {
+    background: linear-gradient(180deg, #fff 0%, var(--morandi-gray) 100%);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+    width: 300px;  /* 固定宽度 */
+    min-width: 300px;  /* 防止压缩 */
+    position: sticky;  /* 使侧边栏固定 */
+    top: 80px;        /* 与顶部导航保持距离 */
+    height: fit-content;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info h3 {
+    margin-top: 0;
+    color: #666; /* 替换为深灰色 */
+}
+
+/* 修改主内容区域样式 */
+main {
+    width: 75%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.9); /* 更改背景颜色为半透明白色 */
+    border-radius: 8px; /* 添加圆角 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+    backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+    margin-top: 0;  /* 移除主内容区域的顶部边距 */
+    flex: 1;
+    min-width: 0;    /* 防止内容溢出 */
+    padding: 20px;
+    max-width: calc(100% - 320px);  /* 确保主内容区域不会过宽 */
+}
+
+/* 修改 section 样式，移除动画相关代码 */
+section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--morandi-gray);
+}
+
+/* 如果需要hover效果，可以保留这个 */
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+    background-color: var(--morandi-gray); /* 替换为深灰色 */
+    color: #666;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* 设置动画顺序 */
+#projects { --order: 1; }
+#awards { --order: 2; }
+#competitions { --order: 3; }
+#resume { --order: 4; }
+#thesis { --order: 5; }
+
+/* 为联系信息添加动画 */
+.contact-info {
+    animation: fadeInRight 1s;
+}
+
+/* 添加背景动画 */
+@keyframes movement {
+    0%, 100% {
+        background-size: 
+            130vmax 130vmax,
+            80vmax 80vmax,
+            90vmax 90vmax,
+            110vmax 110vmax,
+            90vmax 90vmax;
+        background-position:
+            -80vmax -80vmax,
+            60vmax -30vmax,
+            10vmax 10vmax,
+            -30vmax -10vmax,
+            50vmax 50vmax;
+    }
+    25% {
+        background-size: 
+            100vmax 100vmax,
+            90vmax 90vmax,
+            100vmax 100vmax,
+            90vmax 90vmax,
+            60vmax 60vmax;
+        background-position:
+            -60vmax -90vmax,
+            50vmax -40vmax,
+            0vmax -20vmax,
+            -40vmax -20vmax,
+            40vmax 60vmax;
+    }
+    50% {
+        background-size: 
+            80vmax 80vmax,
+            110vmax 110vmax,
+            80vmax 80vmax,
+            60vmax 60vmax,
+            80vmax 80vmax;
+        background-position:
+            -50vmax -70vmax,
+            40vmax -30vmax,
+            10vmax 0vmax,
+            20vmax 10vmax,
+            30vmax 70vmax;
+    }
+    75% {
+        background-size: 
+            90vmax 90vmax,
+            90vmax 90vmax,
+            100vmax 100vmax,
+            90vmax 90vmax,
+            70vmax 70vmax;
+        background-position:
+            -50vmax -40vmax,
+            50vmax -30vmax,
+            20vmax 0vmax,
+            -10vmax 10vmax,
+            40vmax 60vmax;
+    }
+}
+
+/* 个人简介部分样式 */
+.introduction {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.intro-text, .intro-text-en {
+    line-height: 1.8;
+}
+
+.intro-text {
+    font-size: 1.1em;
+}
+
+.intro-text-en {
+    font-size: 1em;
+    color: #666666;
+    font-style: italic;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .introduction {
+        padding: 20px;
+    }
+
+    .intro-text {
+        font-size: 1em;
+    }
+
+    .intro-text-en {
+        font-size: 0.9em;
+    }
+}
+
+/* 移动端适配样式 */
+@media (max-width: 768px) {
+    /* 容器样式 */
+    .container {
+        flex-direction: column;
+        padding: 10px;
+        margin-top: 70px;  /* 为固定导航栏留出空间 */
+    }
+
+    /* 侧边栏样式 */
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 15px;
+        min-width: auto;
+        position: relative;
+        top: 0;
+    }
+
+    /* 主内容区域样式 */
+    main {
+        width: 100%;
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    /* 导航栏样式 */
+    header {
+        padding: 10px 0;
+    }
+
+    nav ul {
+        padding: 0 10px;
+        flex-wrap: wrap;  /* 允许导航项换行 */
+        justify-content: space-around;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+
+    nav ul li a {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+
+    /* 个人照片样式 */
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 15px;
+    }
+
+    /* 联系信息样式 */
+    .contact-info {
+        text-align: center;
+    }
+
+    /* 内容区块样式 */
+    section {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* 字体大小调整 */
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+}
+
+/* 小屏幕设备的额外优化 */
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 0.8em;
+        padding: 5px 10px;
+    }
+
+    .container {
+        margin-top: 60px;
+    }
+
+    section {
+        padding: 12px;
+    }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) {
+    nav ul li a:hover {
+        /* 移除悬停效果 */
+        transform: none;
+        box-shadow: none;
+    }
+
+    section:hover {
+        transform: none;
+    }
+
+    /* 添加点击反馈 */
+    nav ul li a:active {
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+.education, .work-experience {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.edu-item, .work-item {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.edu-item:last-child, .work-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.edu-item h3, .work-item h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.awards {
+    color: #e57373;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.position {
+    color: #4a148c;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.eng-text {
+    color: #666666;
+    font-style: italic;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.description {
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+@media (max-width: 768px) {
+    .education, .work-experience {
+        padding: 15px;
+    }
+    
+    .edu-item, .work-item {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+}
+
+.skills {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.skills-grid {
+    display: grid;
+    /* 修改为4列布局 */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skill-card {
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.skill-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.skill-icons img {
+    width: 40px;     /* 统一宽度 */
+    height: 40px;    /* 统一高度 */
+    object-fit: contain;  /* 保持图标比例 */
+    padding: 5px;    /* 添加内边距使图标不会太挤 */
+    transition: transform 0.2s ease;
+}
+
+.skill-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* 响应式布局时的图标大小 */
+@media (max-width: 768px) {
+    .skill-icons img {
+        width: 35px;
+        height: 35px;
+        padding: 4px;
+    }
+}
+
+/* 响应式布局调整 */
+@media (max-width: 1200px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;  /* 单列显示 */
+    }
+
+    .skill-card {
+        padding: 15px;
+    }
+
+    .skill-icons img {
+        height: 35px;
+    }
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.project-item {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.project-title h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-type {
+    color: #666666;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+.tech-stack {
+    margin: 15px 0;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tech-tag {
+    background: #e3f2fd;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    color: #1976d2;
+}
+
+.project-details ol {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.section-divider {
+    height: 2px;
+    background: linear-gradient(to right, #FFB6C1, #FF4500);
+    margin: 40px 0;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        padding: 15px;
+    }
+    
+    .tech-tags {
+        gap: 8px;
+    }
+    
+    .tech-tag {
+        font-size: 0.8em;
+        padding: 4px 10px;
+    }
+}

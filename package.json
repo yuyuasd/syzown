@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "canvas-confetti": "^1.9.3",
+    "ogl": "^1.0.11"
+  }
+}

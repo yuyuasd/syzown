@@ -1,0 +1,198 @@
+ -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>比赛 - 个人学术网页</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+        }
+
+        .certificate-horizontal {
+            grid-column: span 2;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .certificate-horizontal:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img,
+        .certificate-horizontal img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img,
+        .certificate-horizontal:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            background: rgba(248, 249, 250, 0.9);
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        .gallery-caption span {
+            display: block;
+            margin-top: 5px;
+            color: #666666;
+            font-size: 0.7em;
+        }
+
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(to right, #FF4500, #FFB6C1);
+            margin: 40px 0;
+        }
+
+        .section-title {
+            margin: 30px 0;
+            font-size: 1.5em;
+            color: #333;
+            border-bottom: 3px solid #FF4500;
+            padding-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+                padding: 10px;
+                grid-gap: 15px;
+            }
+
+            .certificate-horizontal {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <div class="container">
+        <div id="sidebar"></div>
+        <main>
+            <section>
+                <h2><i class="fas fa-trophy"></i> 研究生期间比赛</h2>
+                <div class="gallery">
+                    <div class="certificate-horizontal">
+                        <img src="images/competition/yjs-jjrg1.jpg" alt="全国大学生机器人科技创新交流营暨大赛">
+                        <div class="gallery-caption">
+                            全国大学生机器人科技创新交流营暨大赛（全国一等奖）
+                            <span>2023-12-13</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/competition/yjs-hlws2.png" alt="第九届福建省互联网+大赛">
+                        <div class="gallery-caption">
+                            第九届福建省"互联网+"大学生创新创业大赛（福建省产业赛道银奖）
+                            <span>2023-9-13</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section>
+                <h2><i class="fas fa-trophy"></i> 本科期间比赛</h2>
+                <div class="gallery">
+                    <!-- 添加本科期间的比赛证书 -->
+                    <div class="gallery-item">
+                        <img src="images/competition/bk-rm1.jpg" alt="RoboMaster南部赛区一等奖">
+                        <div class="gallery-caption">
+                            第二十届全国大学生机器人人大赛RoboMaster南部赛区（一等奖）
+                            <span>2021-8-13</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="../images/competition/bk-rm2.jpg" alt="证书2">
+                        <div class="gallery-caption">第十九届全国大学生机器人人大赛RoboMaster（全国二等奖）<br>
+                          <span style='color: #666666; font-size: 0.7em;'>2020-8-13</span></div>
+                      </div>
+                    
+                    <div class="gallery-item">
+                        <img src="../images/competition/bk-jjrg3.jpg" alt="证书3">
+                        <div class="gallery-caption">ROBOCUP中国大学生机器人人大赛（国家三等奖）<br>
+                          <span style='color: #666666; font-size: 0.7em;'>2019-8-29</span></div>
+                      </div>
+                    
+                    <div class="gallery-item">
+                        <img src="../images/competition/bk-hlw-g3.jpg" alt="证书4">
+                        <div class="gallery-caption">第八届大学生互联网+创新创业大赛（国家铜奖）<br>
+                          <span style='color: #666666; font-size: 0.7em;'>2023-4-27</span></div>
+                      </div>
+                    
+                    <div class="gallery-item">
+                        <img src="../images/competition/bk-gx-s0.jpg" alt="证书4">
+                        <div class="gallery-caption">第八届福建省大学生工程训练综合能力竞赛（福建特等奖）<br>
+                          <span style='color: #666666; font-size: 0.7em;'>2019-12-13</span></div>
+                      </div>
+                    
+                    <div class="gallery-item">
+                        <img src="../images/competition/bk-gxs2.jpg" alt="证书5">
+                        <div class="gallery-caption">第七届全国大学生工程训练综合能力竞赛（福建省二等奖）<br>
+                          <span style='color: #666666; font-size: 0.7em;'>2021-7-20</span></div>
+                      </div>
+                    
+                    <div class="gallery-item">
+                        <img src="../images/competition/bk-sws1.jpg" alt="证书5">
+                        <div class="gallery-caption">全国大学生三维数字化创新设计大赛（福建赛区一等奖）<br>
+                          <span style='color: #666666; font-size: 0.7em;'>2020-10-15</span></div>
+                      </div>  
+                      
+                    <div class="gallery-item">
+                        <img src="../images/competition/bk-sws2.jpg" alt="证书5">
+                        <div class="gallery-caption">全国大学生三维数字化创新设计大赛（福建赛区二等奖）<br>
+                          <span style='color: #666666; font-size: 0.7em;'>2020-10-6</span></div>
+                      </div>
+                    
+                    <!-- 添加其他本科比赛证书... -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="node_modules/canvas-confetti/dist/confetti.browser.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header', 'components/header.html');
+            await loadComponent('sidebar', 'components/sidebar.html');
+            initConfetti();
+        });
+    </script>
+</body>
+</html>

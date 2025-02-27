@@ -1,0 +1,148 @@
+ <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>奖项 - 个人学术网页</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            background: rgba(248, 249, 250, 0.9);
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        .gallery-caption span {
+            display: block;
+            margin-top: 5px;
+            color: #666666;
+            font-size: 0.7em;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                padding: 10px;
+                grid-gap: 15px;
+            }
+
+            .gallery-item img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <div class="container">
+        <div id="sidebar"></div>
+        <main>
+            <section>
+                <h2><i class="fas fa-award"></i> 获奖证书</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="images/competition/gryxbys.jpg" alt="优秀毕业生证书">
+                        <div class="gallery-caption">
+                            优秀毕业生
+                            <span>2022-06-30</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="images/competition/gryxgqty.jpg" alt="优秀共青团员证书">
+                        <div class="gallery-caption">
+                            优秀共青团员
+                            <span>2020-06-16</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/competition/gryxxs.jpg" alt="优秀学生证书">
+                        <div class="gallery-caption">
+                            优秀学生
+                            <span>2019-11-08</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/competition/grxjgr.jpg" alt="先进个人证书">
+                        <div class="gallery-caption">
+                            先进个人
+                            <span>2018-12-07</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/competition/jxj1.jpg" alt="校一等奖学金证书">
+                        <div class="gallery-caption">
+                            校一等奖学金
+                            <span>2019-04-20</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/competition/jxj22.jpg" alt="校二等奖学金证书">
+                        <div class="gallery-caption">
+                            校二等奖学金
+                            <span>2019-11-25</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="images/competition/jxj2.jpg" alt="校二等奖学金证书">
+                        <div class="gallery-caption">
+                            校二等奖学金
+                            <span>2021-12-01</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="node_modules/canvas-confetti/dist/confetti.browser.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header', 'components/header.html');
+            await loadComponent('sidebar', 'components/sidebar.html');
+            initConfetti();
+        });
+    </script>
+</body>
+</html>

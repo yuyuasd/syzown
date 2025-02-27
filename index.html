@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>首页 - 个人学术网页</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar, main {
+                width: 100%;
+            }
+            
+            .sidebar {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <div class="container">
+        <div id="sidebar"></div>
+        <main>
+            <section class="introduction">
+                <h2>个人简介</h2>
+                <div class="content-wrapper">
+                    <!-- 中文简介 -->
+                    <div class="intro-text">
+                        <p>孙烨臻，男，福建泉州人。本科就读于福建理工大学机械与汽车学院机械设计制造及其自动化专业，被选入智能制造行业工程师实验班，期间专注于嵌入式技术、机械设计与制造等方向，多次参与学科竞赛并获得国家级和省级多个奖项。</p>
+                        <p>研究生阶段继续在福建理工大学机械与汽车学院攻读机械专业，隶属于物联网实验室邹诚团队，主要研究方向涵盖无人机、机器视觉、Lidar以及多传感器融合技术。</p>
+                        <p class="eng-text">Currently, I am pursuing a master's degree in Mechanical Engineering at the same university, as a member of Professor Zou Cheng's team in the Internet of Things Laboratory. My research interests include UAVs, computer vision, LiDAR, and multi-sensor fusion technologies.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="education">
+                <h2>教育经历 Education Background 🏫</h2>
+                <div class="edu-item">
+                    <h3>2018.09-2022.06 福建理工大学 机械设计制造及其自动化 本科</h3>
+                    <p class="awards">🤩优秀学生 优秀共青团员 优秀毕业生🤩</p>
+                    <p class="eng-text">2018.09-2022.06 B.E., Mechanical Design, Manufacturing and Automation, Fujian University of Technology (Outstanding Student, Outstanding Communist Youth League Member, Outstanding Graduate)</p>
+                </div>
+                
+                <div class="edu-item">
+                    <h3>2022.09-2025.06 福建理工大学 机械 硕士研究生</h3>
+                    <p class="awards">🤩研究生国家奖学金🤩</p>
+                    <p class="eng-text">2022.09-2025.06 M.E., Mechanical Engineering, Fujian University of Technology (National Scholarship for Graduate Students)</p>
+                </div>
+            </section>
+            
+            <section class="work-experience">
+                <h2>工作经历 Work Experience 🏢</h2>
+                <div class="work-item">
+                    <h3>2020.07-2020.08 福建科盛包装有限公司(实习)</h3>
+                    <p class="position">机械装配及仓储部门⚙️ -- 机械工程师</p>
+                    <p class="description">前期参与公司机械设备的制造，后期参与仓库的仓储管理</p>
+                    <p class="eng-text">2020.07-2020.08 Fujian Kesheng Packaging Co., Ltd. (Internship) - Mechanical Assembly and Warehouse Department<br>
+                    Initially involved in manufacturing mechanical equipment, later participated in warehouse management</p>
+                </div>
+            
+                <div class="work-item">
+                    <h3>2022.09-2024.06 福建飞虎无人机有限公司(实习)</h3>
+                    <p class="position">装备及算法部门💻 -- 算法工程师</p>
+                    <p class="description">实习期间独立完成5项产品的立项到落地，合作完成5项。主要负责陆地与空中机器人控制软件编写，包括：无人机地面站设计、无人车远程控制、激光雷达避障、图像识别、缺陷检测等项目算法编写及落地出售。</p>
+                    <p class="eng-text">2022.09-2024.06 Fujian AeroTiger UAV Co., Ltd. (Internship) - Equipment and Algorithm Department<br>
+                    Served as an Algorithm Engineer, independently completed 5 products from project initiation to implementation, and collaborated on 5 others. Mainly responsible for developing control software for ground and aerial robots, including: UAV ground station design, unmanned vehicle remote control, LiDAR obstacle avoidance, image recognition, defect detection, and other algorithmic implementations and sales.</p>
+                </div>
+            </section>
+
+            <section class="skills">
+                <h2>主要专业技能 Core Technical Skills 🤖</h2>
+                <div class="skills-grid">
+                    <div class="skill-card" style="background-color: #e3f2fd;">
+                        <h3>编程语言</h3>
+                        <div class="skill-icons">
+                            <img src="images/Skills/c-plus-plus.svg" alt="C++" title="C++">
+                            <img src="images/Skills/python.svg" alt="Python" title="Python">
+                            <img src="images/Skills/matlab1.png" alt="MATLAB" title="MATLAB">
+                        </div>
+                    </div>
+
+                    <div class="skill-card" style="background-color: #e8f5e9;">
+                        <h3>算法框架</h3>
+                        <div class="skill-icons">
+                            <img src="images/Skills/opencv1.png" alt="OpenCV" title="OpenCV">
+                            <img src="images/Skills/pytorch.svg" alt="PyTorch" title="PyTorch">
+                            <img src="images/Skills/ros_logo.png" alt="ROS" title="ROS">
+                        </div>
+                    </div>
+                    <div class="skill-card" style="background-color: #f3e5f5;">
+                        <h3>编译工具</h3>
+                        <div class="skill-icons">
+                            <img src="images/Skills/qt1.png" alt="Qt" title="Qt">
+                            <img src="images/Skills/vscode.svg" alt="VS Code" title="VS Code">
+                            <img src="images/Skills/pycharm.png" alt="PyCharm" title="PyCharm">
+                            <img src="images/Skills/android.svg" alt="Android Studio" title="Android Studio">
+                            <img src="images/Skills/Cmake.png" alt="CMake" title="CMake">
+                        </div>
+                    </div>
+                    <div class="skill-card" style="background-color: #fff3e0;">
+                        <h3>常用工具</h3>
+                        <div class="skill-icons">
+                            <img src="images/Skills/sw.png" alt="SolidWorks" title="SolidWorks">
+                            <img src="images/Skills/vim.svg" alt="Vim" title="Vim">
+                            <img src="images/Skills/git.svg" alt="Git" title="Git">
+                            <img src="images/Skills/putty.png" alt="PuTTY" title="PuTTY">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="node_modules/canvas-confetti/dist/confetti.browser.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        // 加载公共组件
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadComponent('header', 'components/header.html');
+            await loadComponent('sidebar', 'components/sidebar.html');
+            initConfetti();
+        });
+    </script>
+</body>
+</html>
