@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -55,6 +55,62 @@
             font-size: 0.7em;
         }
 
+        .gallery-item.important {
+            grid-column: span 2;  /* 跨越两列 */
+            background: linear-gradient(135deg, #fff5f5, #fff);
+            border: 2px solid #ffcdd2;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-item.important::before {
+            content: "🏆";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            z-index: 1;
+        }
+
+        .gallery-item.important img {
+            height: 400px;  /* 更大的图片高度 */
+        }
+
+        .gallery-item.important .gallery-caption {
+            background: linear-gradient(135deg, #ffebee, #fff);
+            padding: 20px;
+            font-size: 1.1em;
+        }
+
+        .gallery-item.important-full {
+            grid-column: 1 / -1;  /* 跨越整行 */
+            background: linear-gradient(135deg, #fff5f5, #fff);
+            border: 2px solid #ffcdd2;
+            position: relative;
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        .gallery-item.important-full::before {
+            content: "🏆";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            z-index: 1;
+        }
+
+        .gallery-item.important-full img {
+            height: 500px;  /* 更大的图片高度 */
+            object-fit: contain;  /* 保持图片比例 */
+        }
+
+        .gallery-item.important-full .gallery-caption {
+            background: linear-gradient(135deg, #ffebee, #fff);
+            padding: 20px;
+            font-size: 1.2em;
+        }
+
         @media (max-width: 768px) {
             .gallery {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -64,6 +120,18 @@
 
             .gallery-item img {
                 height: 250px;
+            }
+
+            .gallery-item.important {
+                grid-column: span 1;
+            }
+            
+            .gallery-item.important img {
+                height: 300px;
+            }
+
+            .gallery-item.important-full img {
+                height: 350px;
             }
         }
     </style>
@@ -76,7 +144,16 @@
             <section>
                 <h2><i class="fas fa-award"></i> 获奖证书</h2>
                 <div class="gallery">
-                    <div class="gallery-item">
+                    <!-- 添加重要奖项 -->
+                    <div class="gallery-item important-full">
+                        <img src="images/competition/yjsgj.jpg" alt="研究生国家奖学金证书">
+                        <div class="gallery-caption">
+                            研究生国家奖学金
+                            <span>2023-10-01</span>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item important-full">
                         <img src="images/competition/gryxbys.jpg" alt="优秀毕业生证书">
                         <div class="gallery-caption">
                             优秀毕业生

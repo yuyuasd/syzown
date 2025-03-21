@@ -676,3 +676,21 @@ h3 {
     font-size: 1.4em;
     color: #444;
 }
+
+.gallery-item.important-full {
+    grid-column: 1 / -1;  /* 跨越整行 */
+    background: linear-gradient(135deg, #fff5f5, #fff);
+    border: 2px solid #ffcdd2;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    animation: rainbow-border 2s linear infinite;
+}
+
+@keyframes rainbow-border {
+    0% { border-color: #ff6b6b; box-shadow: 0 0 15px #ff6b6b; }
+    25% { border-color: #ffd93d; box-shadow: 0 0 15px #ffd93d; }
+    50% { border-color: #4ecdc4; box-shadow: 0 0 15px #4ecdc4; }
+    75% { border-color: #45b7d1; box-shadow: 0 0 15px #45b7d1; }
+    100% { border-color: #ff6b6b; box-shadow: 0 0 15px #ff6b6b; }
+}
